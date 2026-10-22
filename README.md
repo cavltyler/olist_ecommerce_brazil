@@ -45,7 +45,10 @@ You can interact with the final visualization here: **[Olist E-Commerce: Deliver
 This repository is organized to reflect a professional data engineering and analysis pipeline.
 
 ```
-├── datasets.zip                         # Compressed raw CSV data files (Olist public dataset)
+├── olist_customers_dataset.zip          # Compressed raw CSV data file (Olist public dataset)
+├── olist_geolocation_dataset.zip        # Compressed raw CSV data file (Olist public dataset)
+├── olist_order_reviews_dataset.zip      # Compressed raw CSV data file (Olist public dataset)
+├── olist_customers_dataset.zip          # Compressed raw CSV data file (Olist public dataset)
 ├── schema.sql                           # DDL script: Table architecture, Extensions, and final Reporting Views
 ├── seed.sql                             # DML script: Inserts and static mapping data
 ├── tasks/                               # Modular analytical queries
