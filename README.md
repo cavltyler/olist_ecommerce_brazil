@@ -45,18 +45,19 @@ You can interact with the final visualization here: **[Olist E-Commerce: Deliver
 This repository is organized to reflect a professional data engineering and analysis pipeline.
 
 ```
-├── olist_customers_dataset.zip          # Compressed raw CSV data file (Olist public dataset)
-├── olist_geolocation_dataset.zip        # Compressed raw CSV data file (Olist public dataset)
-├── olist_order_reviews_dataset.zip      # Compressed raw CSV data file (Olist public dataset)
-├── olist_customers_dataset.zip          # Compressed raw CSV data file (Olist public dataset)
-├── schema.sql                           # DDL script: Table architecture, Extensions, and final Reporting Views
-├── seed.sql                             # DML script: Inserts and static mapping data
-├── tasks/                               # Modular analytical queries
-│   ├── 01-review-text-analysis.sql      # NLP/Text mining for most frequent complaint keywords
-│   ├── 02-issue-categorisation.sql      # Master query grouping issues via Regex & Date Math
-│   ├── 03-delivery-geography.sql        # Exploratory Data Analysis (EDA) on geographic bottlenecks
-│   └── 04-final-tableau-export.sql      # Final validation of the Tableau data source
-└── README.md                            # Project documentation
+├── datasets/                             # Compressed raw CSV data files (Olist public dataset) 
+│   ├── olist_customers_dataset.zip       # Customers dataset
+│   ├── olist_geolocation_dataset.zip     # Geolocation dataset
+│   ├── olist_order_reviews_dataset.zip   # Order reviews dataset
+│   ├── olist_customers_dataset.zip       # Customers dataset
+├── schema.sql                            # DDL script: Table architecture, Extensions, and final Reporting Views
+├── seed.sql                              # DML script: Inserts and static mapping data
+├── tasks/                                # Modular analytical queries
+│   ├── 01-review-text-analysis.sql       # NLP/Text mining for most frequent complaint keywords
+│   ├── 02-issue-categorisation.sql       # Master query grouping issues via Regex & Date Math
+│   ├── 03-delivery-geography.sql         # Exploratory Data Analysis (EDA) on geographic bottlenecks
+│   └── 04-final-tableau-export.sql       # Final validation of the Tableau data source
+└── README.md                             # Project documentation
 
 ```
 
