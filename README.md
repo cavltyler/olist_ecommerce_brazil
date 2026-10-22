@@ -1,6 +1,6 @@
 # Olist E-Commerce Analysis: Uncovering the Root Causes of Negative Customer Reviews
 
-## 📌 Project Overview
+## Project Overview
 
 The aim of this project was to understand the most significant contributors to low-score reviews left by customers. The dataset used in this work was the public Olist Brazilian E-Commerce dataset (extracted from Kaggle – see reference segment).
 
@@ -16,31 +16,19 @@ I also observed that many of the reviews grouped under *Delivery* were submitted
 
 As a final step prior to data visualization, I analyzed whether there was a geographic correlation within the delivery-related reviews. The logistics system in Brazil is historically impacted by geography, with deliveries to the northern regions usually taking longer since the main hubs are located in the south. The data confirmed that the Northeast region was the most impacted by delays and failures to deliver, with only 79.05% of orders being delivered on time (see map visualization on the Tableau dashboard). When looking at delivery success by state, Alagoas (AL) and Roraima (RR) were the most impacted, with only 65-66% of deliveries arriving on time. 
 
-The final output is a dynamic Tableau dashboard designed for operations managers to monitor these delivery bottlenecks and product quality issues by region.
+The final output is a dynamic Tableau dashboard designed for operations managers to monitor these delivery bottlenecks and product quality issues by region. You can interact with the final visualization here: **[Olist E-Commerce: Delivery Bottlenecks & Customer Satisfaction](https://public.tableau.com/views/OlistE-Commerce-DeliveryPerformancewithinBrazilianMarket/OlistE-CommerceDeliveryBottlenecksCustomerSatisfaction?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
 
 
-## 🌐 Live Dashboard
-You can interact with the final visualization here: **[Olist E-Commerce: Delivery Bottlenecks & Customer Satisfaction](https://public.tableau.com/views/OlistE-Commerce-DeliveryPerformancewithinBrazilianMarket/OlistE-CommerceDeliveryBottlenecksCustomerSatisfaction?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
+## Key Insights & Business Value
+
+* **Delivery is the Primary Bottleneck:** Text analysis revealed that words associated with shipping deadlines (*prazo*, *atrasado*, *não chegou*) drastically outweighed pure product quality complaints in 1-star and 2-star reviews (which make up \~20% and \~80% of negative reviews, respectively).
+
+* **Geographical Disparities:** Exploratory data analysis highlighted specific regional codes with vastly higher percentages of delayed or undelivered orders compared to the national average.
+
+* **Expectation Misalignment:** Date math calculations comparing estimated vs. actual delivery dates against the review creation date showed that customers frequently leave negative reviews when they misunderstand the estimated delivery window.
 
 
-## 🛠️ Tech Stack & Techniques
-
-* **PostgreSQL:** Data cleaning, text mining, complex joins, subqueries, and database architecture.
-
-  * Used `unaccent` and Regular Expressions (`~*`) to parse unstructured Portuguese text comments.
-
-  * Utilized complex `CASE WHEN` logic to categorize thousands of distinct review messages into clean operational buckets (e.g., Delivery vs. Quality).
-
-  * Built an optimized reporting layer using `CREATE VIEW` to feed live reporting tools.
-
-* **Tableau:** Data visualization and dashboarding.
-
-  * Implemented parameter-driven dynamic filters (using True/False logic evaluation) to seamlessly slice aggregate metrics without breaking the underlying visualizations.
-
-* **Git/GitHub:** Version control and professional repository structuring.
-
-
-## 🗂️ Repository Structure
+## Repository Structure
 
 This repository is organized to reflect a professional data engineering and analysis pipeline.
 
@@ -62,16 +50,24 @@ This repository is organized to reflect a professional data engineering and anal
 ```
 
 
-## 📊 Key Insights & Business Value
+## Tech Stack & Techniques
 
-* **Delivery is the Primary Bottleneck:** Text analysis revealed that words associated with shipping deadlines (*prazo*, *atrasado*, *não chegou*) drastically outweighed pure product quality complaints in 1-star and 2-star reviews (which make up \~20% and \~80% of negative reviews, respectively).
+* **PostgreSQL:** Data cleaning, text mining, complex joins, subqueries, and database architecture.
 
-* **Geographical Disparities:** Exploratory data analysis highlighted specific regional codes with vastly higher percentages of delayed or undelivered orders compared to the national average.
+  * Used `unaccent` and Regular Expressions (`~*`) to parse unstructured Portuguese text comments.
 
-* **Expectation Misalignment:** Date math calculations comparing estimated vs. actual delivery dates against the review creation date showed that customers frequently leave negative reviews when they misunderstand the estimated delivery window.
+  * Utilized complex `CASE WHEN` logic to categorize thousands of distinct review messages into clean operational buckets (e.g., Delivery vs. Quality).
+
+  * Built an optimized reporting layer using `CREATE VIEW` to feed live reporting tools.
+
+* **Tableau:** Data visualization and dashboarding.
+
+  * Implemented parameter-driven dynamic filters (using True/False logic evaluation) to seamlessly slice aggregate metrics without breaking the underlying visualizations.
+
+* **Git/GitHub:** Version control and professional repository structuring.
 
 
-## 🚀 How to Run This Project
+## How to Run This Project
 
 1. Clone the repository to your local machine.
 
@@ -84,5 +80,5 @@ This repository is organized to reflect a professional data engineering and anal
 5. Connect Tableau directly to the `cat_issue_delivery` view to explore the dashboard.
 
 
-## 🔗 References
+## References
 * **Data Source:** [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) via Kaggle.
